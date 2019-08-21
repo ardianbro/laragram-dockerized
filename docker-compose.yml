@@ -43,5 +43,7 @@ services:
       - MYSQL_PASSWORD=secret
       - MYSQL_DATABASE=laragram
     volumes:
-      - ./dbdata:/var/lib/mysql
+      - dbdata:/var/lib/mysql
       - ./docker_conf/mysql/my.cnf:/etc/mysql/my.cnf
+volumes:
+  dbdata:
