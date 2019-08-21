@@ -8,10 +8,15 @@
             </div>
             <div class="col-9 pt-5">
                 <div class="d-flex justify-content-between align-baseline">
-                    <h1>{{ $user->username }}</h1>
+                    <div class="d-flex align-items-center pb-3">
+                        <div class="h3">{{ $user->username }}</div>
+                        <follow-button user-id="{{ $user->id }}"></follow-button>
+                    </div>
+
                     @can('update', $user->profile)
                         <a href="{{route('post.create')}}">Add New Post</a>
                     @endcan
+
                 </div>
 
                 @can('update', $user->profile)
