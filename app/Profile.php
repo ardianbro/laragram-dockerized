@@ -17,4 +17,9 @@ class Profile extends Model
     {
         return ($this->image) ? '/storage/' .  $this->image : '/img/instagram.jpg';
     }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
